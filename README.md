@@ -22,6 +22,7 @@ consider contributing with recommended structures for the following:
  * hapi.js
  * other ...
 
+Just clone this repository, add your template to the `share/templates` directory, and send me a pull request.
 
 License
 -------
