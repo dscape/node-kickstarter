@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+"use strict";
+var path = require('path');
+var fs = require('fs');
+var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+
+require(lib+'/kickstart.js').startproject()
+    .then(function(){
+        process.exit(0);
+    })
+    .catch(function(err){
+        console.log(err);
+        process.exit(1);
+    })
+    .done();

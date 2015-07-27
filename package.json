@@ -1,0 +1,25 @@
+{
+  "name": "node-kickstarter",
+  "version": "1.0.0",
+  "description": "node-kickstarter helps novices adopt recommended directory layouts for new projects",
+  "author": "Celso Pinto <celso@celsopinto.com>",
+  "bin": {
+    "kickstart": "./bin/kickstart"
+  },
+  "main": "lib/kickstart.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cpinto/node-kickstarter"
+  },
+  "bugs": {
+    "url": "https://github.com/cpinto/node-kickstarter/issues"
+  },
+  "preferGlobal": true,
+  "license": "MIT",
+  "dependencies": {
+    "git-user": "0.0.1",
+    "node-options": "0.0.7",
+    "q": "^1.4.1",
+    "wrench": "^1.5.8"
+  }
+}
