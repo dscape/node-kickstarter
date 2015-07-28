@@ -4,9 +4,9 @@
   "description": "node-kickstarter helps novices adopt recommended directory layouts for new projects",
   "author": "Celso Pinto <celso@celsopinto.com>",
   "bin": {
-    "kickstart": "./bin/kickstart"
+    "kickstart": "./bin/kickstart.js"
   },
-  "main": "lib/kickstart.js",
+  "main": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/cpinto/node-kickstarter"
@@ -14,12 +14,36 @@
   "bugs": {
     "url": "https://github.com/cpinto/node-kickstarter/issues"
   },
+  "scripts": {
+    "test": "istanbul cover tape ./test/*.js | tap-spec && istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+    "jshint": "jshint -c .jshintrc --exclude-path .gitignore .",
+    "code-style": "jscs -x -p google bin/ lib/ defaults.js test/ templates/",
+    "coverage": "open coverage/lcov-report/index.html"
+  },
   "preferGlobal": true,
   "license": "MIT",
   "dependencies": {
+    "argh": "^0.1.4",
+    "async": "^1.4.0",
+    "dotenv": "^1.2.0",
     "git-user": "0.0.1",
+    "minimist": "^1.1.2",
     "node-options": "0.0.7",
     "q": "^1.4.1",
     "wrench": "^1.5.8"
+  },
+  "pre-commit": [
+    "jshint",
+    "code-style",
+    "test"
+  ],
+  "devDependencies": {
+    "debug": "^2.2.0",
+    "istanbul": "^0.3.17",
+    "jscs": "^2.0.0",
+    "jshint": "^2.8.0",
+    "pre-commit": "^1.0.10",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1"
   }
 }
